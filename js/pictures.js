@@ -1,3 +1,5 @@
+'use strict';
+
 var picturesData = [];
 var comments = [
   'Всё отлично!',
@@ -34,15 +36,15 @@ var generatePictures = function (template, elem, data, container) {
   var div = document.querySelector(container);
   var fragment = document.createDocumentFragment();
   
-  for (var i = 0, len = data.length; i < len; i++) {
-    var newPicture = pictureTemplate.cloneNode(true);
-    
-    newPicture.querySelector('.picture__img').src = data[i].url;
-    newPicture.querySelector('.picture__stat--likes').textContent = data[i].likes;
-    newPicture.querySelector('.picture__stat--comments').textContent = data[i].comments;
-    
-    fragment.appendChild(newPicture);
-  }
+    for (var i = 0, len = data.length; i < len; i++) {
+      var newPicture = pictureTemplate.cloneNode(true);
+
+      newPicture.querySelector('.picture__img').src = data[i].url;
+      newPicture.querySelector('.picture__stat--likes').textContent = data[i].likes;
+      newPicture.querySelector('.picture__stat--comments').textContent = data[i].comments;
+
+      fragment.appendChild(newPicture);
+    }
   
   div.appendChild(fragment);
 };
@@ -61,7 +63,6 @@ var addDataOverlay = function () {
   
   for (var i = 0, len = avatar.length; i < len; i++) {
     avatar[i].querySelector('.social__picture').src = 'img/avatar-' + getRandom(1, 6) + '.svg';
-    
     avatar[i].replaceChild(document.createTextNode(comments[getRandom(0, comments.length - 1)]), avatar[i].childNodes[2]);
   };
 };
