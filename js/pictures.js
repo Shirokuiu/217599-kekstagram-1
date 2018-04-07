@@ -12,7 +12,6 @@ var comments = [
 
 var getRandom = function (from, to) {
   var random = Math.floor((Math.random() * (to - from + 1)) + from);
-  
   return random;
 };
 
@@ -25,7 +24,6 @@ var generetaArray = function (elemArray, len) {
       description: 'Вот это тачка!'
     });
   }
-  
   return elemArray;
 };
 
@@ -36,15 +34,15 @@ var generatePictures = function (template, elem, data, container) {
   var div = document.querySelector(container);
   var fragment = document.createDocumentFragment();
   
-    for (var i = 0, len = data.length; i < len; i++) {
-      var newPicture = pictureTemplate.cloneNode(true);
+  for (var i = 0, len = data.length; i < len; i++) {
+    var newPicture = pictureTemplate.cloneNode(true);
 
-      newPicture.querySelector('.picture__img').src = data[i].url;
-      newPicture.querySelector('.picture__stat--likes').textContent = data[i].likes;
-      newPicture.querySelector('.picture__stat--comments').textContent = data[i].comments;
+    newPicture.querySelector('.picture__img').src = data[i].url;
+    newPicture.querySelector('.picture__stat--likes').textContent = data[i].likes;
+    newPicture.querySelector('.picture__stat--comments').textContent = data[i].comments;
 
-      fragment.appendChild(newPicture);
-    }
+    fragment.appendChild(newPicture);
+  }
   
   div.appendChild(fragment);
 };
@@ -56,11 +54,11 @@ var bigPicture = document.querySelector('.big-picture');
 bigPicture.classList.remove('hidden');
 
 var addDataOverlay = function () {
+  var avatar = bigPicture.querySelectorAll('.social__comment');
+  
   bigPicture.querySelector('img').src = picturesData[0].url;
   bigPicture.querySelector('.likes-count').textContent = picturesData[0].likes;
   bigPicture.querySelector('.comments-count').textContent = picturesData[0].comments;
-  var avatar = bigPicture.querySelectorAll('.social__comment');
-  
   for (var i = 0, len = avatar.length; i < len; i++) {
     avatar[i].querySelector('.social__picture').src = 'img/avatar-' + getRandom(1, 6) + '.svg';
     avatar[i].replaceChild(document.createTextNode(comments[getRandom(0, comments.length - 1)]), avatar[i].childNodes[2]);
