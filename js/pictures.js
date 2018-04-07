@@ -35,11 +35,9 @@ var generatePictures = function (template, elem, data, container) {
   var fragment = document.createDocumentFragment();
   for (var i = 0, len = data.length; i < len; i++) {
     var newPicture = pictureTemplate.cloneNode(true);
-
     newPicture.querySelector('.picture__img').src = data[i].url;
     newPicture.querySelector('.picture__stat--likes').textContent = data[i].likes;
     newPicture.querySelector('.picture__stat--comments').textContent = data[i].comments;
-
     fragment.appendChild(newPicture);
   }
   div.appendChild(fragment);
