@@ -33,7 +33,6 @@ var generatePictures = function (template, elem, data, container) {
   var pictureTemplate = document.querySelector(template).content.querySelector(elem);
   var div = document.querySelector(container);
   var fragment = document.createDocumentFragment();
-  
   for (var i = 0, len = data.length; i < len; i++) {
     var newPicture = pictureTemplate.cloneNode(true);
 
@@ -43,7 +42,6 @@ var generatePictures = function (template, elem, data, container) {
 
     fragment.appendChild(newPicture);
   }
-  
   div.appendChild(fragment);
 };
 
@@ -55,7 +53,6 @@ bigPicture.classList.remove('hidden');
 
 var addDataOverlay = function () {
   var avatar = bigPicture.querySelectorAll('.social__comment');
-  
   bigPicture.querySelector('img').src = picturesData[0].url;
   bigPicture.querySelector('.likes-count').textContent = picturesData[0].likes;
   bigPicture.querySelector('.comments-count').textContent = picturesData[0].comments;
@@ -68,4 +65,4 @@ var addDataOverlay = function () {
 addDataOverlay();
 
 bigPicture.querySelector('.social__comment-count').classList.add('visually-hidden');
-bigPicture.querySelector('.social__comment-loadmore').classList.add('visually-hidden');
+bigPicture.querySelector('.social__comment-loadmore').classList.add('visually-hidden')
