@@ -57,10 +57,10 @@ var addDataOverlay = function () {
   for (var i = 0, len = avatar.length; i < len; i++) {
     avatar[i].querySelector('.social__picture').src = 'img/avatar-' + getRandom(1, 6) + '.svg';
     avatar[i].replaceChild(document.createTextNode(comments[getRandom(0, comments.length - 1)]), avatar[i].childNodes[2]);
-  };
+  }
 };
 
 addDataOverlay();
 
 bigPicture.querySelector('.social__comment-count').classList.add('visually-hidden');
-bigPicture.querySelector('.social__comment-loadmore').classList.add('visually-hidden')
+bigPicture.querySelector('.social__comment-loadmore').classList.add('visually-hidden');
