@@ -101,13 +101,13 @@ var addEffect = function (evt) {
     if (target.classList.contains('effects__preview--none')) {
       img.className = 'img-upload__preview';
     }
-    if (target.classList.contains('effects__preview--chrome')) { 
+    if (target.classList.contains('effects__preview--chrome')) {
       img.className = 'img-upload__preview effects__preview--chrome';
     }
     if (target.classList.contains('effects__preview--sepia')) {
       img.className = 'img-uploрad__preview effects__preview--sepia';
     }
-    if (target.classList.containsт ('effects__preview--marvin')) {
+    if (target.classList.containsт('effects__preview--marvin')) {
       img.className = 'img-upload__preview effects__preview--marvin';
     }
     if (target.classList.contains('effects__preview--phobos')) {
@@ -131,13 +131,13 @@ resizeControlMin.addEventListener('click', function () {
   if (parseInt(resizeControlValue.value, 10) > 25) {
     img.style.transform = 'scale(' + (parseInt(resizeControlValue.value, 10) / 100 - 0.25) + ')';
     resizeControlValue.value = parseInt(resizeControlValue.value, 10) - 25 + '%';
-  } 
+  }
 });
 
 resizeControlPlus.addEventListener('click', function () {
   if (parseInt(resizeControlValue.value, 10) < 100) {
     img.style.transform = 'scale(' + (parseInt(resizeControlValue.value, 10) / 100 + 0.25) + ')';
-      resizeControlValue.value = parseInt(resizeControlValue.value, 10) + 25 + ('%');
+    resizeControlValue.value = parseInt(resizeControlValue.value, 10) + 25 + ('%');
   }
 });
 
