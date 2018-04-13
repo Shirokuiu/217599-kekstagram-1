@@ -51,7 +51,6 @@ var exit = bigPicture.querySelector('.big-picture__cancel');
 
 exit.addEventListener('click', function (e) {
   e.preventDefault();
-  
   bigPicture.classList.add('hidden');
   document.removeEventListener('keydown', onEscPress);
 });
@@ -85,7 +84,6 @@ var onEscPress = function (evt) {
 
 uploadFile.addEventListener('change', function () {
   uploadOverlay.classList.remove('hidden');
-  
   document.addEventListener('keydown', onEscPress);
 });
 
@@ -99,15 +97,14 @@ var effects = uploadOverlay.querySelector('.effects__list');
 
 var addEffect = function (evt) {
   var target = evt.target.closest('.effects__preview');
-  
-  if (target != null) {
+  if (target !== null) {
     if (target.classList.contains('effects__preview--none')) {
       img.className = 'img-upload__preview';
     }
     if (target.classList.contains('effects__preview--chrome')) { 
       img.className = 'img-upload__preview effects__preview--chrome';
     }
-     if (target.classList.contains('effects__preview--sepia')) {
+    if (target.classList.contains('effects__preview--sepia')) {
       img.className = 'img-uploрad__preview effects__preview--sepia';
     }
     if (target.classList.containsт ('effects__preview--marvin')) {
@@ -150,7 +147,6 @@ var openPicture = function () {
   for (var i = 0, len = picture.length; i < len; i++) {
     picture[i].addEventListener('click', function (e) {
       var target = e.currentTarget;
-      
       e.preventDefault();
       bigPicture.classList.remove('hidden');
       bigPicture.querySelector('img').src = target.querySelector('.picture__img').src;
